@@ -47,4 +47,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    // Добавьте этот метод в класс User
+public function sellerApplication()
+{
+    return $this->hasOne(SellerApplication::class);
+}
 }

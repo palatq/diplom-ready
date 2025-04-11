@@ -10,11 +10,15 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     public function create()
-    {
-        $categories = Category::all();
-        return view('create', compact('categories'));
-        // Обратите внимание - просто 'create' без префикса 'products.'
+{
+    $categories = Category::all();
+    
+    if ($categories->isEmpty()) {
+        return back()->with('error', 'Нет доступных категорий. Обратитесь к администратору.');
     }
+
+    return view('create', compact('categories'));
+}
 
     public function store(Request $request)
     {

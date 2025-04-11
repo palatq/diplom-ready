@@ -12,7 +12,20 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <h3 class="text-lg font-medium">Добро пожаловать в админку, {{ auth()->user()->name }}!</h3>
                     <p class="mt-2">Здесь будут административные функции.</p>
+                    
+                    <!-- Добавленная кнопка -->
+                    <div class="mt-4">
+                    <x-nav-link :href="route('admin.categories')" :active="request()->routeIs('admin.categories')" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:border-blue-900 focus:ring focus:ring-blue-300 disabled:opacity-25 transition">
+                        {{ __('Добавить категории') }}
+
+                    </x-nav-link>     
+                    <!-- Новая кнопка модерации -->
+                    <x-nav-link :href="route('seller.moderation')" :active="request()->routeIs('seller.moderation')" class="inline-flex items-center px-4 py-2 bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-700 active:bg-green-800 focus:outline-none focus:border-green-900 focus:ring focus:ring-green-300 disabled:opacity-25 transition">
+                                {{ __('Модерация продавцов') }}
+                    </x-nav-link>
+               </div>
                 </div>
+                
             </div>
         </div>
     </div>

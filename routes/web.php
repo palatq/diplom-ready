@@ -5,6 +5,9 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\EnsureUserIsSeller;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SellerModerationController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,5 +40,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     });
 });
-
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
+});
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/seller-moderation', [SellerModerationController::class, 'index'])
+        ->name('seller.moderation');
+    Route::post('/approve-seller/{id}', [SellerModerationController::class, 'approve'])
+        ->name('seller.approve');
+    Route::post('/reject-seller/{id}', [SellerModerationController::class, 'reject'])
+        ->name('seller.reject');
+});
 require __DIR__.'/auth.php';
