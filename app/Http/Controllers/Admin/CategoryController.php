@@ -24,4 +24,13 @@ class CategoryController extends Controller
     return redirect()->route('admin.categories')
            ->with('success', 'Категория успешно добавлена');
 }
+ // Добавим новый метод для фронтенда
+ public function show(Category $category)
+ {
+     return view('categories.show', [
+         'category' => $category,
+         // Если есть товары:
+         'products' => $category->products()->paginate(12) 
+     ]);
+ }                                  
 }

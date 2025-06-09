@@ -23,11 +23,11 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead>
                                 <tr>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Название</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase">ID</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase">Название</th>
                                 </tr>
                             </thead>
-                            <tbody class="divide-y divide-gray-200">
+                            <tbody class="divide-y text-white">
                                 @foreach($categories as $category)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">{{ $category->id }}</td>

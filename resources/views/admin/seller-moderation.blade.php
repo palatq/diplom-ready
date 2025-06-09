@@ -22,7 +22,7 @@
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Имя</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Email</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Телефон</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Действия</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Дополнительная информация</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -31,6 +31,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-gray-100">{{ $app->user->name }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-gray-100">{{ $app->user->email }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-gray-100">{{ $app->phone }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-gray-900 dark:text-gray-100">{{ $app->message ?: '—' }}</td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex space-x-2">
                                             <form action="{{ route('seller.approve', $app->id) }}" method="POST">

@@ -34,5 +34,7 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'yandex' => [
+    'maps_key' => env('YANDEX_MAPS_KEY'),
+    ],
 ];

@@ -27,6 +27,7 @@
                                     class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:border-gray-600"></textarea>
                             </div>
                             
+                            
                             <div class="mb-4">
                                 <label class="flex items-center">
                                     <input type="checkbox" name="agree" required class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
